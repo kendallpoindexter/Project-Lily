@@ -32,6 +32,7 @@ class DogListViewController: UIViewController {
 //MARK: - UITableViewController Data Source Methods
 
 extension DogListViewController:  UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -41,7 +42,12 @@ extension DogListViewController:  UITableViewDataSource {
         return cell
     }
     
+}
+
+extension DogListViewController: UITableViewDelegate {
     
-    
-    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return indexPath
+    }
 }
