@@ -12,7 +12,7 @@
         <!--Dog Detail View Controller-->
         <scene sceneID="kbX-rX-qRj">
             <objects>
-                <viewController id="Ixy-yQ-jxf" customClass="DogDetailViewController" customModule="Project_Lily" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DogDetail" id="Ixy-yQ-jxf" customClass="DogDetailViewController" customModule="Project_Lily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t8x-3D-LtL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

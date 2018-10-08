@@ -29,6 +29,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nOF-Bq-ql4" kind="show" id="h28-3A-hFe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -41,6 +44,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5h-Nx-r8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="996" y="22.906403940886701"/>
+        </scene>
+        <!--DogDetail-->
+        <scene sceneID="OMx-l7-E7B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DogDetail" id="nOF-Bq-ql4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keU-Tw-x7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="-39"/>
         </scene>
     </scenes>
 </document>
