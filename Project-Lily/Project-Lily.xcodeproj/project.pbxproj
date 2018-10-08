@@ -16,6 +16,7 @@
 		EBBA2B39216BD4320068CF92 /* DogList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B38216BD4320068CF92 /* DogList.storyboard */; };
 		EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B3A216BD4FB0068CF92 /* DogListViewController.swift */; };
 		EBBA2B40216BE39D0068CF92 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B3F216BE39D0068CF92 /* Home.storyboard */; };
+		EBBA2B42216BEF6F0068CF92 /* DogDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EBBA2B38216BD4320068CF92 /* DogList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DogList.storyboard; sourceTree = "<group>"; };
 		EBBA2B3A216BD4FB0068CF92 /* DogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewController.swift; sourceTree = "<group>"; };
 		EBBA2B3F216BE39D0068CF92 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DogDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				EBBA2B28216BA1480068CF92 /* Main.storyboard */,
 				EBBA2B3F216BE39D0068CF92 /* Home.storyboard */,
 				EBBA2B38216BD4320068CF92 /* DogList.storyboard */,
+				EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBA2B42216BEF6F0068CF92 /* DogDetail.storyboard in Resources */,
 				EBBA2B2F216BA14A0068CF92 /* LaunchScreen.storyboard in Resources */,
 				EBBA2B40216BE39D0068CF92 /* Home.storyboard in Resources */,
 				EBBA2B2C216BA14A0068CF92 /* Assets.xcassets in Resources */,
