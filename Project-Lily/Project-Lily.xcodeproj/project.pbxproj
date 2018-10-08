@@ -17,6 +17,7 @@
 		EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B3A216BD4FB0068CF92 /* DogListViewController.swift */; };
 		EBBA2B40216BE39D0068CF92 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B3F216BE39D0068CF92 /* Home.storyboard */; };
 		EBBA2B42216BEF6F0068CF92 /* DogDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */; };
+		EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EBBA2B3A216BD4FB0068CF92 /* DogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewController.swift; sourceTree = "<group>"; };
 		EBBA2B3F216BE39D0068CF92 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DogDetail.storyboard; sourceTree = "<group>"; };
+		EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				EBBA2B3A216BD4FB0068CF92 /* DogListViewController.swift */,
 				EBBA2B26216BA1480068CF92 /* HomeViewController.swift */,
+				EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBBA2B37216BB6B90068CF92 /* BreedClass.swift in Sources */,
+				EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */,
 				EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */,
 				EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */,
 				EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */,
