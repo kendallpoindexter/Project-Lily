@@ -10,8 +10,4 @@ import Foundation
 
 class DogDatabase {
     var dogsArray: [Dog] = []
-    
-    init(dogsArray: [Dog]) {
-        self.dogsArray = dogsArray
-    }
 }

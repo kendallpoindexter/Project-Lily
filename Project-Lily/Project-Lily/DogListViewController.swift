@@ -9,11 +9,72 @@
 import UIKit
 
 class DogListViewController: UIViewController {
+    
+    //MARK: - Properties
+    
+    var dogDatabase = DogDatabase()
+   
+    //MARK: - Outlets
+    
+    @IBOutlet weak var dogListTableView: UITableView!
+    
+    
+    //MARK: - Lifecyle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureDogList()
+        getDogData()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func configureDogList() {
+        dogListTableView.dataSource = self
+        dogListTableView.delegate = self
+    }
+    
+    //MARK: - Methods
+    
+    func getDogData() {
+        guard let url = self.dogURL() else { return }
+        guard let jsonString = performDogRequest(with: url) else { return }
+//        self.dogDatabase.dogsArray = parse(data: jsonString)
+        if let dogs = parse(data: jsonString) {
+            dogDatabase.dogsArray = dogs
+        } else {
+            dogDatabase.dogsArray = []
+        }
+        
+    }
+    
+    //MARK: - Networking Methods
+    
+    func dogURL() -> URL? {
+        let urlString = "https://api.thedogapi.com/v1/breeds?limit=200&page=0"
+        guard let url = URL(string: urlString) else {return nil}
+        return url
+    }
+    
+    func performDogRequest(with url: URL) -> Data? {
+        do {
+            return try Data(contentsOf: url)
+        } catch {
+            print("Download Error: \(error.localizedDescription)")
+            return nil
+        }
+        
+    }
+    
+    func parse(data: Data) -> [Dog]? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode([Dog].self, from: data)
+            return result
+        } catch {
+            print("JSON Error \(error)")
+            return nil
+        }
     }
     
 
@@ -34,11 +95,14 @@ class DogListViewController: UIViewController {
 extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dogDatabase.dogsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath)
+        let dogs = dogDatabase.dogsArray[indexPath.row]
+        
+        cell.textLabel?.text = dogs.name
         return cell
     }
     
