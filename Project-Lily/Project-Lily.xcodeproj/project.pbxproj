@@ -19,6 +19,7 @@
 		EBBA2B42216BEF6F0068CF92 /* DogDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */; };
 		EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */; };
 		EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B47216D1FDF0068CF92 /* DogClass.swift */; };
+		EBBA2B4A216D21D30068CF92 /* DogDatabaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EBBA2B41216BEF6F0068CF92 /* DogDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DogDetail.storyboard; sourceTree = "<group>"; };
 		EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
 		EBBA2B47216D1FDF0068CF92 /* DogClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogClass.swift; sourceTree = "<group>"; };
+		EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDatabaseClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				EBBA2B36216BB6B90068CF92 /* BreedClass.swift */,
 				EBBA2B47216D1FDF0068CF92 /* DogClass.swift */,
+				EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */,
 				EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */,
 				EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */,
+				EBBA2B4A216D21D30068CF92 /* DogDatabaseClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
