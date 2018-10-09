@@ -11,10 +11,10 @@
         <!--DogList-->
         <scene sceneID="hn4-ad-qkR">
             <objects>
-                <viewControllerPlaceholder storyboardName="DogList" id="Uef-71-GCW" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3Y-Rh-2vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="DogList" referencedIdentifier="DogList" id="Uef-71-GCW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fYD-Mr-bcI"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l3Y-Rh-2vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="583"/>
         </scene>
@@ -40,10 +40,10 @@
         <!--Home-->
         <scene sceneID="BVu-k8-iEn">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Home" storyboardName="Home" id="GQ2-Vt-WNI" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxr-54-cyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="GQ2-Vt-WNI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="uvm-o8-e7k"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxr-54-cyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46" y="587"/>
         </scene>

@@ -13,15 +13,25 @@ class DogListViewController: UIViewController {
     //MARK: - Properties
     
     var dogDatabase = DogDatabase()
+   
+    //MARK: - Outlets
+    
+    @IBOutlet weak var dogListTableView: UITableView!
+    
     
     //MARK: - Lifecyle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureDogList()
         getDogData()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func configureDogList() {
+        dogListTableView.dataSource = self
+        dogListTableView.delegate = self
     }
     
     //MARK: - Methods
@@ -29,8 +39,14 @@ class DogListViewController: UIViewController {
     func getDogData() {
         guard let url = self.dogURL() else { return }
         guard let jsonString = performDogRequest(with: url) else { return }
-        self.dogDatabase.dogsArray = parse(data: jsonString) ?? []
+//        self.dogDatabase.dogsArray = parse(data: jsonString)
+        if let dogs = parse(data: jsonString) {
+            dogDatabase.dogsArray = dogs
+        } else {
+            dogDatabase.dogsArray = []
+        }
         
+        print(dogDatabase.dogsArray[0].name)
     }
     
     //MARK: - Networking Methods
@@ -85,6 +101,9 @@ extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath)
+        let dogs = dogDatabase.dogsArray[indexPath.row]
+        
+        cell.textLabel?.text = dogs.name
         return cell
     }
     
