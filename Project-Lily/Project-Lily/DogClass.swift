@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dog {
+class Dog: Codable {
     let id: Int?
     let name: String?
     

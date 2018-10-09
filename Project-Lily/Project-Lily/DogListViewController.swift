@@ -9,11 +9,44 @@
 import UIKit
 
 class DogListViewController: UIViewController {
+    
+    
+    
+    //MARK: - Lifecyle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - Networking Methods
+    
+    func dogURL() -> URL? {
+        let urlString = "https://api.thedogapi.com/v1/breeds?limit=200&page=0"
+        guard let url = URL(string: urlString) else {return nil}
+        return url
+    }
+    
+    func performDogRequest(with url: URL) -> Data? {
+        do {
+            return try Data(contentsOf: url)
+        } catch {
+            print("Download Error: \(error.localizedDescription)")
+            return nil
+        }
+        
+    }
+    
+    func parse(data: Data) -> [Dog]? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode([Dog].self, from: data)
+            return result
+        } catch {
+            print("JSON Error \(error)")
+            return nil
+        }
     }
     
 
