@@ -9,20 +9,44 @@
 import Foundation
 
 class Breed {
-    var name: String?
-    var weight: String?
-    var height: String?
-    var lifeSpan: String?
-    var breedDescription: String?
-    var breedGroup: String?
+    let id: Int?
+    let name: String?
+    let lifeSpan: String?
+    let bredFor: String?
+    let breedGroup: String?
+    let temperament: String?
+    let weight: Weight?
+    let height: Height?
     
-    init(name: String, weight: String, height: String, lifeSpan: String, breedDescription: String, breedGroup: String) {
+    init(id: Int, name: String, lifeSpan: String, bredFor: String, breedGroup: String, temperament: String, weight: Weight, height: Height ) {
+        self.id = id
         self.name = name
+        self.lifeSpan = lifeSpan
+        self.bredFor = bredFor
+        self.breedGroup = breedGroup
+        self.temperament = temperament
         self.weight = weight
         self.height = height
-        self.lifeSpan = lifeSpan
-        self.breedDescription = breedDescription
-        self.breedGroup = breedGroup
+   
     }
 }
 
+class Weight {
+    let imperial: String
+    let metric: String
+    
+    init(imperial: String, metric: String) {
+        self.imperial = imperial
+        self.metric = metric
+    }
+}
+
+class Height {
+    let imperial: String
+    let metric: String
+    
+    init(imperial: String, metric: String) {
+        self.imperial = imperial
+        self.metric = metric
+    }
+}
