@@ -46,7 +46,6 @@ class DogListViewController: UIViewController {
             dogDatabase.dogsArray = []
         }
         
-        print(dogDatabase.dogsArray[0].name)
     }
     
     //MARK: - Networking Methods
