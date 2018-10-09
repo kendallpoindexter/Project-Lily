@@ -10,14 +10,27 @@ import UIKit
 
 class DogListViewController: UIViewController {
     
+    //MARK: - Properties
     
+    var dogDatabase = DogDatabase()
     
     //MARK: - Lifecyle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDogData()
 
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - Methods
+    
+    func getDogData() {
+        guard let url = self.dogURL() else { return }
+        guard let jsonString = performDogRequest(with: url) else { return }
+        self.dogDatabase.dogsArray = parse(data: jsonString) ?? []
+        
     }
     
     //MARK: - Networking Methods
@@ -67,7 +80,7 @@ class DogListViewController: UIViewController {
 extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dogDatabase.dogsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
