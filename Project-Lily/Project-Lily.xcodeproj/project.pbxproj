@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691EEDFE871D8EBCA48F7CF8 /* Pods_Project_Lily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */; };
 		EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B24216BA1480068CF92 /* AppDelegate.swift */; };
 		EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B26216BA1480068CF92 /* HomeViewController.swift */; };
 		EBBA2B2A216BA1480068CF92 /* PhaseOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B28216BA1480068CF92 /* PhaseOne.storyboard */; };
@@ -17,9 +18,14 @@
 		EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */; };
 		EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B47216D1FDF0068CF92 /* DogClass.swift */; };
 		EBBA2B4A216D21D30068CF92 /* DogDatabaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */; };
+		EBBA2B51216E44D60068CF92 /* BreedImageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */; };
+		EBBA2B53216FCD210068CF92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25EA8CD6D41E2C583EAE467D /* Pods-Project-Lily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Lily.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily.release.xcconfig"; sourceTree = "<group>"; };
+		44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Lily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810E8EE2D1822DED7898F62C /* Pods-Project-Lily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Lily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily.debug.xcconfig"; sourceTree = "<group>"; };
 		EBBA2B21216BA1480068CF92 /* Project-Lily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Lily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA2B24216BA1480068CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBA2B26216BA1480068CF92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +38,8 @@
 		EBBA2B45216BF0090068CF92 /* DogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
 		EBBA2B47216D1FDF0068CF92 /* DogClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogClass.swift; sourceTree = "<group>"; };
 		EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDatabaseClass.swift; sourceTree = "<group>"; };
+		EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageClass.swift; sourceTree = "<group>"; };
+		EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691EEDFE871D8EBCA48F7CF8 /* Pods_Project_Lily.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D7CB80EF0C18B2E9FC07AB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				810E8EE2D1822DED7898F62C /* Pods-Project-Lily.debug.xcconfig */,
+				25EA8CD6D41E2C583EAE467D /* Pods-Project-Lily.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3EB30F22E8958DD87AB795FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EBBA2B18216BA1480068CF92 = {
 			isa = PBXGroup;
 			children = (
 				EBBA2B23216BA1480068CF92 /* Project-Lily */,
 				EBBA2B22216BA1480068CF92 /* Products */,
+				0D7CB80EF0C18B2E9FC07AB0 /* Pods */,
+				3EB30F22E8958DD87AB795FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +95,7 @@
 				EBBA2B24216BA1480068CF92 /* AppDelegate.swift */,
 				EBBA2B2B216BA14A0068CF92 /* Assets.xcassets */,
 				EBBA2B30216BA14A0068CF92 /* Info.plist */,
+				EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */,
 				EBBA2B3C216BE0C10068CF92 /* Model */,
 				EBBA2B3D216BE0DE0068CF92 /* View */,
 				EBBA2B3E216BE1120068CF92 /* Controller */,
@@ -80,6 +109,7 @@
 				EBBA2B36216BB6B90068CF92 /* BreedClass.swift */,
 				EBBA2B47216D1FDF0068CF92 /* DogClass.swift */,
 				EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */,
+				EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBBA2B33216BA14A0068CF92 /* Build configuration list for PBXNativeTarget "Project-Lily" */;
 			buildPhases = (
+				9DA0E3003A111F3C65D748BE /* [CP] Check Pods Manifest.lock */,
 				EBBA2B1D216BA1480068CF92 /* Sources */,
 				EBBA2B1E216BA1480068CF92 /* Frameworks */,
 				EBBA2B1F216BA1480068CF92 /* Resources */,
+				864833213E3690D13BCE7A6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,12 +194,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBBA2B2F216BA14A0068CF92 /* LaunchScreen.storyboard in Resources */,
+				EBBA2B53216FCD210068CF92 /* GoogleService-Info.plist in Resources */,
 				EBBA2B2C216BA14A0068CF92 /* Assets.xcassets in Resources */,
 				EBBA2B2A216BA1480068CF92 /* PhaseOne.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		864833213E3690D13BCE7A6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA0E3003A111F3C65D748BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project-Lily-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBBA2B1D216BA1480068CF92 /* Sources */ = {
@@ -177,6 +259,7 @@
 				EBBA2B37216BB6B90068CF92 /* BreedClass.swift in Sources */,
 				EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */,
 				EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */,
+				EBBA2B51216E44D60068CF92 /* BreedImageClass.swift in Sources */,
 				EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */,
 				EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */,
 				EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */,
@@ -324,6 +407,7 @@
 		};
 		EBBA2B34216BA14A0068CF92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 810E8EE2D1822DED7898F62C /* Pods-Project-Lily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,6 +425,7 @@
 		};
 		EBBA2B35216BA14A0068CF92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25EA8CD6D41E2C583EAE467D /* Pods-Project-Lily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
