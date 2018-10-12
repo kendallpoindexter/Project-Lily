@@ -13,6 +13,7 @@ class DogListViewController: UIViewController {
     //MARK: - Properties
     
     var dogDatabase = DogDatabase()
+    var selectedIndex: Int?
    
     //MARK: - Outlets
     
@@ -48,10 +49,21 @@ class DogListViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "DetailSegue":
+            guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
+            guard let selectedIndex = selectedIndex else { return }
+            DogDetailViewController.dog = dogDatabase.dogsArray[selectedIndex]
+        default:
+            return 
+        }
+    }
+    
     //MARK: - Networking Methods
     
     func dogURL() -> URL? {
-        let urlString = "https://api.thedogapi.com/v1/breeds?limit=200&page=0"
+        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
         guard let url = URL(string: urlString) else {return nil}
         return url
     }
@@ -112,6 +124,7 @@ extension DogListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
+        selectedIndex = indexPath.row
         return indexPath
     }
 }

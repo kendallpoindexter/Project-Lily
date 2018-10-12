@@ -8,12 +8,8 @@
 
 import Foundation
 
-class Dog: Codable {
-    let id: Int?
-    let name: String?
-    
-    init(id: Int, name: String) {
-        self.id = id
-        self.name = name
-    }
+class Dog: Decodable {
+    let id: String
+    let name: String
+    let imageURL: String
 }
