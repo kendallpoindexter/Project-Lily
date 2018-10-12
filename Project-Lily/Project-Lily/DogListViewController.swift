@@ -51,7 +51,7 @@ class DogListViewController: UIViewController {
     //MARK: - Networking Methods
     
     func dogURL() -> URL? {
-        let urlString = "https://api.thedogapi.com/v1/breeds?limit=200&page=0"
+        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
         guard let url = URL(string: urlString) else {return nil}
         return url
     }
