@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2042" y="682"/>
         </scene>
-        <!--View Controller-->
+        <!--Suggested Breeds View Controller-->
         <scene sceneID="WWd-o6-E7x">
             <objects>
-                <viewController id="sLH-HJ-GfX" sceneMemberID="viewController">
+                <viewController id="sLH-HJ-GfX" customClass="SuggestedBreedsViewController" customModule="Project_Lily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knR-Ei-jLW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
