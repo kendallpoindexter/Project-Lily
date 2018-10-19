@@ -63,15 +63,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56n-tF-Lkk">
+                                <rect key="frame" x="67" y="201" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8xt-z0-kgd"/>
                     </view>
                     <navigationItem key="navigationItem" id="BbP-fn-qhI"/>
+                    <connections>
+                        <outlet property="homeImageView" destination="56n-tF-Lkk" id="HKz-RX-Gd6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9F-iD-YPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="-144"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="-144.08866995073893"/>
         </scene>
         <!--Dog List View Controller-->
         <scene sceneID="Wz1-2V-vBw">
