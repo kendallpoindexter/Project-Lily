@@ -13,11 +13,14 @@ class DogListViewController: UIViewController {
     //MARK: - Properties
     
     var dogDatabase = DogDatabase()
+    var filteredDogArray = [Dog]()
     var selectedIndex: Int?
+    var isSearching = false
    
     //MARK: - Outlets
     
     @IBOutlet weak var dogListTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     //MARK: - Lifecyle
@@ -26,6 +29,7 @@ class DogListViewController: UIViewController {
         super.viewDidLoad()
         configureDogList()
         getDogData()
+        configureSearchBar()
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +37,12 @@ class DogListViewController: UIViewController {
     func configureDogList() {
         dogListTableView.dataSource = self
         dogListTableView.delegate = self
+    }
+    
+    func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.becomeFirstResponder()
+        searchBar.returnKeyType = UIReturnKeyType.done
     }
     
     //MARK: - Methods
@@ -59,36 +69,6 @@ class DogListViewController: UIViewController {
             return 
         }
     }
-    
-    //MARK: - Networking Methods
-    
-    func dogURL() -> URL? {
-        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
-        guard let url = URL(string: urlString) else {return nil}
-        return url
-    }
-    
-    func performDogRequest(with url: URL) -> Data? {
-        do {
-            return try Data(contentsOf: url)
-        } catch {
-            print("Download Error: \(error.localizedDescription)")
-            return nil
-        }
-        
-    }
-    
-    func parse(data: Data) -> [Dog]? {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode([Dog].self, from: data)
-            return result
-        } catch {
-            print("JSON Error \(error)")
-            return nil
-        }
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -107,18 +87,32 @@ class DogListViewController: UIViewController {
 extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isSearching == true {
+            return filteredDogArray.count
+        }
         return dogDatabase.dogsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath)
-        let dogs = dogDatabase.dogsArray[indexPath.row]
+        let dogs: Dog
+       
+        
+        if isSearching == true {
+            dogs = filteredDogArray[indexPath.row]
+        } else {
+            
+            dogs = dogDatabase.dogsArray[indexPath.row]
+        }
         
         cell.textLabel?.text = dogs.name
         return cell
     }
     
 }
+
+//MARK: - UITableViewController Delegate Methods
 
 extension DogListViewController: UITableViewDelegate {
     
@@ -127,6 +121,58 @@ extension DogListViewController: UITableViewDelegate {
         selectedIndex = indexPath.row
         return indexPath
     }
+}
+
+//MARK: - Networking Methods
+
+extension DogListViewController {
+    
+    func dogURL() -> URL? {
+        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
+        guard let url = URL(string: urlString) else {return nil}
+        return url
+    }
+    
+    func performDogRequest(with url: URL) -> Data? {
+        do {
+            return try Data(contentsOf: url)
+        } catch {
+            print("Download Error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func parse(data: Data) -> [Dog]? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode([Dog].self, from: data)
+            return result
+        } catch {
+            print("JSON Error \(error)")
+            return nil
+        }
+    }
+    
+}
+
+//MARK: - UISearchBar Delegate Implementation 
+
+extension DogListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            
+            isSearching = false
+            view.endEditing(true)
+            dogListTableView.reloadData()
+        } else {
+            isSearching = true
+            guard let text = searchBar.text else {return}
+            filteredDogArray = dogDatabase.dogsArray.filter({$0.name.contains(text)})
+            dogListTableView.reloadData()
+        }
+    }
+    
 }
 
 

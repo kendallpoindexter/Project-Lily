@@ -111,6 +111,7 @@
                     <navigationItem key="navigationItem" id="doD-fl-FsO"/>
                     <connections>
                         <outlet property="dogListTableView" destination="PtI-7b-eRc" id="7GW-A0-wbM"/>
+                        <outlet property="searchBar" destination="Vh9-fd-vAh" id="2wW-d9-S2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYU-Jy-oah" userLabel="First Responder" sceneMemberID="firstResponder"/>
