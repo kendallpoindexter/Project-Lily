@@ -135,19 +135,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XIG-fn-wua">
-                            <size key="itemSize" width="143" height="127"/>
+                            <size key="itemSize" width="175" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rby-BK-QI0">
-                                <rect key="frame" x="0.0" y="0.0" width="143" height="127"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rby-BK-QI0" customClass="FavoriteDogImageCell" customModule="Project_Lily" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="143" height="127"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpG-qG-uVt">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="favoriteDogImage" destination="zpG-qG-uVt" id="za2-k6-Wdz"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -159,7 +168,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="job-hI-VQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="1608"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="1607.8817733990149"/>
         </scene>
         <!--Breeds-->
         <scene sceneID="zOQ-Kl-qab">
