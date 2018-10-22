@@ -22,6 +22,7 @@
 		EBBA2B51216E44D60068CF92 /* BreedImageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */; };
 		EBBA2B53216FCD210068CF92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */; };
 		EBD4075F217E4D6A001C92DC /* FavoriteDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD4075E217E4D6A001C92DC /* FavoriteDogsViewController.swift */; };
+		EBD40761217E4E61001C92DC /* FavoriteDogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD40760217E4E61001C92DC /* FavoriteDogCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageClass.swift; sourceTree = "<group>"; };
 		EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBD4075E217E4D6A001C92DC /* FavoriteDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDogsViewController.swift; sourceTree = "<group>"; };
+		EBD40760217E4E61001C92DC /* FavoriteDogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDogCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				EBBA2B49216D21D30068CF92 /* DogDatabaseClass.swift */,
 				EBBA2B50216E44D60068CF92 /* BreedImageClass.swift */,
 				EB87F2A5217E19790050680E /* FavoriteDogClass.swift */,
+				EBD40760217E4E61001C92DC /* FavoriteDogCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				EBBA2B51216E44D60068CF92 /* BreedImageClass.swift in Sources */,
 				EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */,
 				EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */,
+				EBD40761217E4E61001C92DC /* FavoriteDogCell.swift in Sources */,
 				EBD4075F217E4D6A001C92DC /* FavoriteDogsViewController.swift in Sources */,
 				EB87F2A6217E19790050680E /* FavoriteDogClass.swift in Sources */,
 				EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */,
