@@ -14,7 +14,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     //MARK: - Properties
 
-    
+    var favorites = FavoriteDogs.shared
 
     //MARK: - Lifecycle
     
@@ -39,14 +39,6 @@ class FavoriteDogsViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-   
-
-   
- 
- 
-
-
 }
 
 // MARK: UICollectionViewDataSource
@@ -55,7 +47,7 @@ extension FavoriteDogsViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return favorites.count
     }
     
     
@@ -77,15 +69,8 @@ extension FavoriteDogsViewController {
 
 extension FavoriteDogsViewController {
     
-    
-    //     Uncomment this method to specify if the specified item should be highlighted during tracking
-    //    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-    //        return true
-    //    }
-    
-    
-    
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
+        
     }
 }
