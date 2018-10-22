@@ -65,6 +65,10 @@ class DogListViewController: UIViewController {
             guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
             DogDetailViewController.dog = dogDatabase.dogsArray[selectedIndex]
+            
+            if isSearching == true {
+                DogDetailViewController.dog = filteredDogArray[selectedIndex]
+            }
         default:
             return 
         }
