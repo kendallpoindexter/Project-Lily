@@ -12,6 +12,7 @@ class DogDetailViewController: UIViewController {
     
     //MARK: - Properties
     var dog: Dog?
+    var favoriteDogs = FavoriteDogs()
     
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
@@ -60,8 +61,9 @@ class DogDetailViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func favoriteTapped(_ sender: UIButton) {
-        
-        
+        guard let dog = dog else { return }
+        favoriteDogs.favoriteDogArray.append(dog)
+        print(favoriteDogs.favoriteDogArray[0].name)
         
     }
     
