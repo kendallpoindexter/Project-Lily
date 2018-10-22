@@ -9,12 +9,22 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var homeImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayImage()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    //MARK: - Methods
+    
+    func displayImage() {
+        homeImageView.image = UIImage(named: "Fam")
+    }
 
 }
 

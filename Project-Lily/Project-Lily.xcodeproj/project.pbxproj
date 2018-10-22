@@ -10,7 +10,7 @@
 		691EEDFE871D8EBCA48F7CF8 /* Pods_Project_Lily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */; };
 		EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B24216BA1480068CF92 /* AppDelegate.swift */; };
 		EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B26216BA1480068CF92 /* HomeViewController.swift */; };
-		EBBA2B2A216BA1480068CF92 /* PhaseOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B28216BA1480068CF92 /* PhaseOne.storyboard */; };
+		EBBA2B2A216BA1480068CF92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B28216BA1480068CF92 /* Main.storyboard */; };
 		EBBA2B2C216BA14A0068CF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B2B216BA14A0068CF92 /* Assets.xcassets */; };
 		EBBA2B2F216BA14A0068CF92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA2B2D216BA14A0068CF92 /* LaunchScreen.storyboard */; };
 		EBBA2B37216BB6B90068CF92 /* BreedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B36216BB6B90068CF92 /* BreedClass.swift */; };
@@ -29,7 +29,7 @@
 		EBBA2B21216BA1480068CF92 /* Project-Lily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Lily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA2B24216BA1480068CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBA2B26216BA1480068CF92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		EBBA2B29216BA1480068CF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PhaseOne.storyboard; sourceTree = "<group>"; };
+		EBBA2B29216BA1480068CF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBBA2B2B216BA14A0068CF92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBBA2B2E216BA14A0068CF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBBA2B30216BA14A0068CF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				EBBA2B2D216BA14A0068CF92 /* LaunchScreen.storyboard */,
-				EBBA2B28216BA1480068CF92 /* PhaseOne.storyboard */,
+				EBBA2B28216BA1480068CF92 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 				EBBA2B2F216BA14A0068CF92 /* LaunchScreen.storyboard in Resources */,
 				EBBA2B53216FCD210068CF92 /* GoogleService-Info.plist in Resources */,
 				EBBA2B2C216BA14A0068CF92 /* Assets.xcassets in Resources */,
-				EBBA2B2A216BA1480068CF92 /* PhaseOne.storyboard in Resources */,
+				EBBA2B2A216BA1480068CF92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,12 +270,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBBA2B28216BA1480068CF92 /* PhaseOne.storyboard */ = {
+		EBBA2B28216BA1480068CF92 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EBBA2B29216BA1480068CF92 /* Base */,
 			);
-			name = PhaseOne.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		EBBA2B2D216BA14A0068CF92 /* LaunchScreen.storyboard */ = {
