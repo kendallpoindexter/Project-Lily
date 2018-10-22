@@ -15,6 +15,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     //MARK: - Properties
 
     var favorites = FavoriteDogs.shared
+    var dogImageHelper = DogImageHelper()
 
     //MARK: - Lifecycle
     
@@ -57,8 +58,9 @@ extension FavoriteDogsViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath) as! FavoriteDogImageCell
         
+       
         
         return cell
     }

@@ -13,6 +13,7 @@ class DogDetailViewController: UIViewController {
     //MARK: - Properties
     var dog: Dog?
     var favoriteDogs = FavoriteDogs.shared
+    var dogImageHelper = DogImageHelper()
     
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
@@ -23,34 +24,42 @@ class DogDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBreedName()
-        getBreedImage()
+        loadImage()
     }
     
     //MARK: - Methods
     
-    func getBreedImage() {
-        guard let dog = dog else { return }
-        let imageURLString = dog.imageURL
-        
-        guard let imageURL = URL(string: imageURLString),
-            let imageData = convertImageURL(with: imageURL) else { return }
-        
-        loadImage(with: imageData)
-    }
+   
     
-    func convertImageURL(with imageURL: URL) -> Data? {
-        do {
-            let data = try Data(contentsOf: imageURL)
-            return data
-        } catch {
-            print("Download Error: \(error.localizedDescription)")
-            return nil
-        }
+    func loadImage() {
+        guard let imageData =  dogImageHelper.getDogImageURL(from: dog) else { return }
+        breedImage.image = UIImage(data: imageData)
     }
+
     
-    func loadImage(with data: Data) {
-        breedImage.image = UIImage(data: data)
-    }
+//    func getBreedImage() {
+//        guard let dog = dog else { return }
+//        let imageURLString = dog.imageURL
+//
+    //        guard let imageURL = URL(string: imageURLString),
+    //            let imageData = convertImageURL(with: imageURL) else { return }
+//
+//        loadImage(with: imageData)
+//    }
+//
+//    func convertImageURL(with imageURL: URL) -> Data? {
+//        do {
+//            let data = try Data(contentsOf: imageURL)
+//            return data
+//        } catch {
+//            print("Download Error: \(error.localizedDescription)")
+//            return nil
+//        }
+//    }
+//
+//    func loadImage(with data: Data) {
+//        breedImage.image = UIImage(data: data)
+//    }
     
     func loadBreedName() {
         
