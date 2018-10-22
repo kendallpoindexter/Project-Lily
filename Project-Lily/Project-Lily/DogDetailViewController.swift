@@ -12,6 +12,7 @@ class DogDetailViewController: UIViewController {
     
     //MARK: - Properties
     var dog: Dog?
+    var favoriteDogs = FavoriteDogs()
     
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
@@ -57,14 +58,14 @@ class DogDetailViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Actions
+    
+    @IBAction func favoriteTapped(_ sender: UIButton) {
+        guard let dog = dog else { return }
+        favoriteDogs.favoriteDogArray.append(dog)
+        print(favoriteDogs.favoriteDogArray[0].name)
+        
     }
-    */
+    
 
 }
