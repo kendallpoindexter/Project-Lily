@@ -10,4 +10,6 @@ import Foundation
 
 class FavoriteDogs {
     var favoriteDogArray: [Dog] = []
+    
+    static let shared = FavoriteDogs().favoriteDogArray
 }
