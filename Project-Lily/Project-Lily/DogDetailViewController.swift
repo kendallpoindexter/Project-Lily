@@ -61,6 +61,8 @@ class DogDetailViewController: UIViewController {
     
     @IBAction func favoriteTapped(_ sender: UIButton) {
         
+        
+        
     }
     
 
