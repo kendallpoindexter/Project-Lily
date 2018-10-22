@@ -10,4 +10,9 @@ import UIKit
 
 class FavoriteDogImageCell: UICollectionViewCell {
     
+    @IBOutlet weak var favoriteDogImage: UIImageView!
+    
+    func loadImage(with data: Data) {
+        favoriteDogImage.image = UIImage(data: data)
+    }
 }
