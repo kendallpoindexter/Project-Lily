@@ -11,5 +11,6 @@ import Foundation
 class Dog: Decodable {
     let id: String
     let name: String
+    let size: String
     let imageURL: String
 }

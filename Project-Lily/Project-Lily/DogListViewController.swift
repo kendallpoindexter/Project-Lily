@@ -168,7 +168,7 @@ extension DogListViewController: UISearchBarDelegate {
         } else {
             isSearching = true
             guard let text = searchBar.text else {return}
-            filteredDogArray = dogDatabase.dogsArray.filter() {$0.name.contains(text) || $0.id.contains(text)}
+            filteredDogArray = dogDatabase.dogsArray.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
             dogListTableView.reloadData()
         }
     }
