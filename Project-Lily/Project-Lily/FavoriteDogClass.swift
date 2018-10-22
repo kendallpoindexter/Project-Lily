@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class FavoriteDogs {
+    var favoriteDogArray: [Dog] = []
+}
