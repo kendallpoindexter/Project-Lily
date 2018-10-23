@@ -16,6 +16,7 @@ class FavoriteDogsViewController: UICollectionViewController {
 
     //var favorites = FavoriteDogs.shared
     var dogImageHelper = DogImageHelper()
+    var selectedIndex: Int?
     
     //MARK: - Outlets
     
@@ -34,15 +35,15 @@ class FavoriteDogsViewController: UICollectionViewController {
 
     }
 
-    /*
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dogDetailViewController = segue.destination as? DogDetailViewController, let selectedIndex = selectedIndex else { return }
+        
+        dogDetailViewController.dog = FavoriteDogs.shared[selectedIndex]
+        
     }
-    */
+
 }
 
 // MARK: UICollectionViewDataSource
@@ -79,6 +80,9 @@ extension FavoriteDogsViewController {
 extension FavoriteDogsViewController {
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        selectedIndex = indexPath.row
+        
         return true
         
     }

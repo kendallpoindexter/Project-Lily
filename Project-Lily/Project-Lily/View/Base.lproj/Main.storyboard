@@ -156,6 +156,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="favoriteDogImage" destination="D9Q-dj-UBY" id="bmb-F8-k31"/>
+                                    <segue destination="Qmv-WW-DM6" kind="show" identifier="FavoriteDetail" id="cBL-ih-Hv8"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -252,4 +253,7 @@
             <point key="canvasLocation" x="2041" y="1762"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cBL-ih-Hv8"/>
+    </inferredMetricsTieBreakers>
 </document>
