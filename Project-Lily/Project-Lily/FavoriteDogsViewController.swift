@@ -14,19 +14,20 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     //MARK: - Properties
 
-    var favorites = FavoriteDogs.shared
+    //var favorites = FavoriteDogs.shared
     var dogImageHelper = DogImageHelper()
 
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(FavoriteDogImageCell.self, forCellWithReuseIdentifier: "FavoriteCell")
 
         // Do any additional setup after loading the view.
     }
@@ -48,19 +49,22 @@ extension FavoriteDogsViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return favorites.count
+        print("There are \(FavoriteDogs.shared.count) dogs in favorites.")
+        return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return FavoriteDogs.shared.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath) as! FavoriteDogImageCell
         
-       
+        guard let imageData = dogImageHelper.getDogImageURL(from: FavoriteDogs.shared[indexPath.row]) else { return cell }
+        
+       cell.loadImage(with: imageData)
         
         return cell
     }

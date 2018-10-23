@@ -12,7 +12,7 @@ class DogDetailViewController: UIViewController {
     
     //MARK: - Properties
     var dog: Dog?
-    var favoriteDogs = FavoriteDogs.shared
+//    var favoriteDogs = FavoriteDogs.shared
     var dogImageHelper = DogImageHelper()
     
     //MARK: - Outlets
@@ -72,8 +72,9 @@ class DogDetailViewController: UIViewController {
     @IBAction func favoriteTapped(_ sender: UIButton) {
         guard let dog = dog else { return }
         //favoriteDogs.favoriteDogArray.append(dog)
-        favoriteDogs.append(dog)
-        print(favoriteDogs[0].name)
+        FavoriteDogs.shared.append(dog)
+//        print(favoriteDogs[0].name)
+        print("There are \(FavoriteDogs.shared.count) dogs in favoriteDogs")
         
     }
     
