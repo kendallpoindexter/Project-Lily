@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="h60-2Q-F2V" kind="relationship" relationship="viewControllers" id="Eh7-7A-Lpw"/>
                         <segue destination="7Vl-ed-JED" kind="relationship" relationship="viewControllers" id="sVR-Ki-R9c"/>
+                        <segue destination="DUL-ky-NjU" kind="relationship" relationship="viewControllers" id="omX-a1-y1y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGW-4s-305" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,10 +164,14 @@
                             <outlet property="delegate" destination="CEY-dR-Q2S" id="4t1-Rf-x3W"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="Z03-Op-Nhd"/>
+                    <connections>
+                        <outlet property="favoriteDogsCollection" destination="qZ0-GP-7lx" id="iIo-yG-o9Z"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ej-dZ-JNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2920.8000000000002" y="1485.960591133005"/>
+            <point key="canvasLocation" x="2937" y="1762"/>
         </scene>
         <!--Breeds-->
         <scene sceneID="zOQ-Kl-qab">
@@ -226,6 +231,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olK-1q-Kny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3885.5999999999999" y="680.54187192118229"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="7Ru-nO-QAn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUL-ky-NjU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" id="6J5-SK-Jvs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KpO-we-D6j">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CEY-dR-Q2S" kind="relationship" relationship="rootViewController" id="qT4-Tb-qE8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMd-fo-wzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2041" y="1762"/>
         </scene>
     </scenes>
 </document>

@@ -11,6 +11,6 @@ import Foundation
 class FavoriteDogs {
     var favorites: [Dog] = []
     
-    static let shared = FavoriteDogs().favorites
+    static var shared = FavoriteDogs().favorites
     
 }
