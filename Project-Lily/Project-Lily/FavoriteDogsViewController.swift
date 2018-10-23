@@ -16,20 +16,22 @@ class FavoriteDogsViewController: UICollectionViewController {
 
     //var favorites = FavoriteDogs.shared
     var dogImageHelper = DogImageHelper()
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var favoriteDogsCollection: UICollectionView!
+    
 
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        //self.collectionView!.register(FavoriteDogImageCell.self, forCellWithReuseIdentifier: "FavoriteCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        favoriteDogsCollection.reloadData()
 
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -49,6 +51,8 @@ extension FavoriteDogsViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        favoriteDogsCollection.reloadData()
+
         print("There are \(FavoriteDogs.shared.count) dogs in favorites.")
         return 1
     }
@@ -78,4 +82,6 @@ extension FavoriteDogsViewController {
         return true
         
     }
+    
+    
 }
