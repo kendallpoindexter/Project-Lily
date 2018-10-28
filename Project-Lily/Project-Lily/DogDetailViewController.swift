@@ -13,7 +13,7 @@ class DogDetailViewController: UIViewController {
     //MARK: - Properties
     var dog: Dog?
 //    var favoriteDogs = FavoriteDogs.shared
-    var dogImageHelper = DogImageHelper()
+    //var dogImageHelper = DogImageHelper()
     
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
@@ -32,7 +32,7 @@ class DogDetailViewController: UIViewController {
    
     
     func loadImage() {
-        guard let imageData =  dogImageHelper.getDogImageURL(from: dog) else { return }
+        guard let imageData =  DogImageHelper.getDogImageURL(from: dog) else { return }
         breedImage.image = UIImage(data: imageData)
     }
 

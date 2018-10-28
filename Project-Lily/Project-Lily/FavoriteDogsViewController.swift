@@ -15,7 +15,6 @@ class FavoriteDogsViewController: UICollectionViewController {
     //MARK: - Properties
 
     //var favorites = FavoriteDogs.shared
-    var dogImageHelper = DogImageHelper()
     var selectedIndex: Int?
     
     //MARK: - Outlets
@@ -67,7 +66,7 @@ extension FavoriteDogsViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath) as! FavoriteDogImageCell
         
-        guard let imageData = dogImageHelper.getDogImageURL(from: FavoriteDogs.shared[indexPath.row]) else { return cell }
+        guard let imageData = DogImageHelper.getDogImageURL(from: FavoriteDogs.shared[indexPath.row]) else { return cell }
         
        cell.loadImage(with: imageData)
         

@@ -28,7 +28,8 @@ class DogListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDogList()
-        getDogData()
+        createDogURLSession()
+        //getDogData()
         configureSearchBar()
 
         // Do any additional setup after loading the view.
@@ -47,17 +48,17 @@ class DogListViewController: UIViewController {
     
     //MARK: - Methods
     
-    func getDogData() {
-        guard let url = self.dogURL() else { return }
-        guard let jsonString = performDogRequest(with: url) else { return }
-//        self.dogDatabase.dogsArray = parse(data: jsonString)
-        if let dogs = parse(data: jsonString) {
-            dogDatabase.dogsArray = dogs
-        } else {
-            dogDatabase.dogsArray = []
-        }
-        
-    }
+//    func getDogData() {
+//        guard let url = self.dogURL() else { return }
+//        guard let jsonString = performDogRequest(with: url) else { return }
+////        self.dogDatabase.dogsArray = parse(data: jsonString)
+//        if let dogs = parse(data: jsonString) {
+//            dogDatabase.dogsArray = dogs
+//        } else {
+//            dogDatabase.dogsArray = []
+//        }
+//
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -137,14 +138,38 @@ extension DogListViewController {
         return url
     }
     
-    func performDogRequest(with url: URL) -> Data? {
-        do {
-            return try Data(contentsOf: url)
-        } catch {
-            print("Download Error: \(error.localizedDescription)")
-            return nil
+    func createDogURLSession() {
+        let session = URLSession.shared
+        guard let url = dogURL() else { return }
+        let dataTask = session.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Failure! \(error)")
+            } else if let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200 {
+                if let data = data {
+                    self.dogDatabase.dogsArray = self.parse(data: data)!
+                    DispatchQueue.main.async {
+                        self.dogListTableView.reloadData()
+                    }
+                }
+                return
+            } else {
+                print("Failure! \(response!)")
+            }
+
         }
+        
+        dataTask.resume()
     }
+    
+//    func performDogRequest(with url: URL) -> Data? {
+//        do {
+//            return try Data(contentsOf: url)
+//        } catch {
+//            print("Download Error: \(error.localizedDescription)")
+//            return nil
+//        }
+//    }
     
     func parse(data: Data) -> [Dog]? {
         do {

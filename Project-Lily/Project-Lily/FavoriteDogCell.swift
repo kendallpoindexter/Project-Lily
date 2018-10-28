@@ -14,5 +14,6 @@ class FavoriteDogImageCell: UICollectionViewCell {
     
     func loadImage(with data: Data) {
         favoriteDogImage.image = UIImage(data: data)
+        
     }
 }
