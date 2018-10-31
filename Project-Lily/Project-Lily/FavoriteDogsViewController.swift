@@ -26,7 +26,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        decodeData()
+        Persistence.loadFavorites()
         
     }
     
@@ -37,14 +37,14 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     //MARK: - Methods
     
-    func decodeData() {
-        do{
-            let decoded = UserDefaults.standard.object(forKey: "favoriteDogs") as! Data
-            FavoriteDogs.shared.favorites = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as! [Dog]
-        }catch {
-            print("Failed to Decode data with \(error)")
-        }
-    }
+//    func decodeData() {
+//        do{
+//            let decoded = UserDefaults.standard.object(forKey: "favoriteDogs") as! Data
+//            FavoriteDogs.shared.favorites = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as! [Dog]
+//        }catch {
+//            print("Failed to Decode data with \(error)")
+//        }
+//    }
 
      // MARK: - Navigation
     
