@@ -40,7 +40,14 @@ class DogDetailViewController: UIViewController {
     }
     
     func encodeData() {
-        let encodedData: Data = NSKeyedArchiver
+        do {
+            let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: FavoriteDogs.shared.favorites,
+                                                                     requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedData, forKey: "favoriteDogs")
+        } catch let error {
+            print("Failed to encode object! \(error)")
+        }
+        
     }
 
     //MARK: - Actions
@@ -49,6 +56,7 @@ class DogDetailViewController: UIViewController {
         guard let dog = dog else { return }
         //favoriteDogs.favoriteDogArray.append(dog)
         FavoriteDogs.shared.favorites.append(dog)
+        encodeData()
 
 //        print(favoriteDogs[0].name)
         print("There are \(FavoriteDogs.shared.favorites.count) dogs in favoriteDogs")
