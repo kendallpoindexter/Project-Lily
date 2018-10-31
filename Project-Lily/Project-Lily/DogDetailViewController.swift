@@ -29,37 +29,10 @@ class DogDetailViewController: UIViewController {
     
     //MARK: - Methods
     
-   
-    
     func loadImage() {
         guard let imageData =  DogImageHelper.getDogImageURL(from: dog) else { return }
         breedImage.image = UIImage(data: imageData)
     }
-
-    
-//    func getBreedImage() {
-//        guard let dog = dog else { return }
-//        let imageURLString = dog.imageURL
-//
-    //        guard let imageURL = URL(string: imageURLString),
-    //            let imageData = convertImageURL(with: imageURL) else { return }
-//
-//        loadImage(with: imageData)
-//    }
-//
-//    func convertImageURL(with imageURL: URL) -> Data? {
-//        do {
-//            let data = try Data(contentsOf: imageURL)
-//            return data
-//        } catch {
-//            print("Download Error: \(error.localizedDescription)")
-//            return nil
-//        }
-//    }
-//
-//    func loadImage(with data: Data) {
-//        breedImage.image = UIImage(data: data)
-//    }
     
     func loadBreedName() {
         
@@ -72,9 +45,10 @@ class DogDetailViewController: UIViewController {
     @IBAction func favoriteTapped(_ sender: UIButton) {
         guard let dog = dog else { return }
         //favoriteDogs.favoriteDogArray.append(dog)
-        FavoriteDogs.shared.append(dog)
+        FavoriteDogs.shared.favorites.append(dog)
+
 //        print(favoriteDogs[0].name)
-        print("There are \(FavoriteDogs.shared.count) dogs in favoriteDogs")
+        print("There are \(FavoriteDogs.shared.favorites.count) dogs in favoriteDogs")
         
     }
     

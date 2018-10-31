@@ -26,6 +26,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     
@@ -39,7 +40,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dogDetailViewController = segue.destination as? DogDetailViewController, let selectedIndex = selectedIndex else { return }
         
-        dogDetailViewController.dog = FavoriteDogs.shared[selectedIndex]
+        dogDetailViewController.dog = FavoriteDogs.shared.favorites[selectedIndex]
         
     }
 
@@ -53,20 +54,20 @@ extension FavoriteDogsViewController {
         // #warning Incomplete implementation, return the number of sections
         favoriteDogsCollection.reloadData()
 
-        print("There are \(FavoriteDogs.shared.count) dogs in favorites.")
+        print("There are \(FavoriteDogs.shared.favorites.count) dogs in favorites.")
         return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return FavoriteDogs.shared.count
+        return FavoriteDogs.shared.favorites.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath) as! FavoriteDogImageCell
         
-        guard let imageData = DogImageHelper.getDogImageURL(from: FavoriteDogs.shared[indexPath.row]) else { return cell }
+        guard let imageData = DogImageHelper.getDogImageURL(from: FavoriteDogs.shared.favorites[indexPath.row]) else { return cell }
         
        cell.loadImage(with: imageData)
         
