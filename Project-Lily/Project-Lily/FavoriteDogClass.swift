@@ -9,6 +9,8 @@
 import Foundation
 
 class FavoriteDogs {
+    
+    //Try UserDefault within class in order to load favorite dogs from p.list
     var favorites: [Dog] = []
     
     static var shared = FavoriteDogs().favorites

@@ -10,8 +10,10 @@ import Foundation
 
 class DogImageHelper {
     
-    
-    func getDogImageURL(from dog: Dog?) -> Data? {
+//    DogImageHelper().getDogImageURL
+//    DogImageHelper.getDogImageURL
+
+   static func getDogImageURL(from dog: Dog?) -> Data? {
         
         guard let dog = dog else { return nil }
         let imageURLString = dog.imageURL
@@ -22,7 +24,7 @@ class DogImageHelper {
         return imageData
     }
     
-   private func convertImageURL(with imageURL: URL) -> Data? {
+   private static func convertImageURL(with imageURL: URL) -> Data? {
         do {
             let data = try Data(contentsOf: imageURL)
             return data
