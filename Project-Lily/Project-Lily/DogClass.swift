@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dog: Decodable {
+class Dog: Codable {
     let id: String
     let name: String
     let size: String

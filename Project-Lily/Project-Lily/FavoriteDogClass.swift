@@ -8,10 +8,10 @@
 
 import Foundation
 
-class FavoriteDogs {
+class FavoriteDogs: Codable {
     
     //Try UserDefault within class in order to load favorite dogs from p.list
-    let favoriteDefault = UserDefaults.standard
+    
     var favorites: [Dog] = []
     
     

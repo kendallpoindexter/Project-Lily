@@ -37,7 +37,10 @@ class DogDetailViewController: UIViewController {
     func loadBreedName() {
         
         breedName.text = dog?.name
-        
+    }
+    
+    func encodeData() {
+        let encodedData: Data = NSKeyedArchiver
     }
 
     //MARK: - Actions
