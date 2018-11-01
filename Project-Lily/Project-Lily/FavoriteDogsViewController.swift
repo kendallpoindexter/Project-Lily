@@ -37,14 +37,6 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     //MARK: - Methods
     
-//    func decodeData() {
-//        do{
-//            let decoded = UserDefaults.standard.object(forKey: "favoriteDogs") as! Data
-//            FavoriteDogs.shared.favorites = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as! [Dog]
-//        }catch {
-//            print("Failed to Decode data with \(error)")
-//        }
-//    }
 
      // MARK: - Navigation
     
