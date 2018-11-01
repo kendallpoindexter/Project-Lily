@@ -8,9 +8,14 @@
 
 import Foundation
 
-class Dog: Decodable {
+struct Dog: Decodable {
     let id: String
     let name: String
     let size: String
+    let exercise: String
+    let shedding: String
+    let grooming: String
+    let training: String
+    let description: String
     let imageURL: String
 }
