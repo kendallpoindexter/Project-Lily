@@ -18,12 +18,18 @@ class DogDetailViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
     @IBOutlet weak var breedImage: UIImageView!
+    @IBOutlet weak var breedDescription: UILabel!
+    @IBOutlet weak var breedSize: UILabel!
+    @IBOutlet weak var breedExerciseNeeds: UILabel!
+    @IBOutlet weak var breedShedding: UILabel!
+    @IBOutlet weak var breedGrooming: UILabel!
+    @IBOutlet weak var breedTraining: UILabel!
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadBreedName()
+        setLabels()
         loadImage()
     }
     
@@ -31,12 +37,20 @@ class DogDetailViewController: UIViewController {
     
     func loadImage() {
         guard let imageData =  DogImageHelper.getDogImageURL(from: dog) else { return }
+        breedImage.layer.borderColor = UIColor.black.cgColor
+        breedImage.layer.borderWidth = 1
+        //breedImage.layer.cornerRadius = 5
         breedImage.image = UIImage(data: imageData)
     }
     
-    func loadBreedName() {
-        
+    func setLabels() {
         breedName.text = dog?.name
+        breedDescription.text = dog?.description
+        breedSize.text = dog?.size
+        breedExerciseNeeds.text = dog?.exercise
+        breedShedding.text = dog?.shedding
+        breedGrooming.text = dog?.grooming
+        breedTraining.text = dog?.training
     }
     
     //MARK: - Actions

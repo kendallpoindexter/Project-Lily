@@ -21,13 +21,14 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     @IBOutlet weak var favoriteDogsCollection: UICollectionView!
     
+  
+    
 
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Persistence.loadFavorites()
-        
+        Persistence.loadFavorites()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     //MARK: - Methods
     
+  
 
      // MARK: - Navigation
     
