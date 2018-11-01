@@ -18,12 +18,13 @@ class DogDetailViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var breedName: UILabel!
     @IBOutlet weak var breedImage: UIImageView!
+    @IBOutlet weak var breedDescription: UILabel!
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadBreedName()
+        setLabels()
         loadImage()
     }
     
@@ -34,9 +35,9 @@ class DogDetailViewController: UIViewController {
         breedImage.image = UIImage(data: imageData)
     }
     
-    func loadBreedName() {
-        
+    func setLabels() {
         breedName.text = dog?.name
+        breedDescription.text = dog?.description
     }
     
     //MARK: - Actions

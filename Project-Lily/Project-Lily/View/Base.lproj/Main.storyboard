@@ -223,8 +223,8 @@
                                 <rect key="frame" x="20" y="420" width="374" height="393"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-V0-xzm">
-                                        <rect key="frame" x="8" y="8" width="138" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-V0-xzm">
+                                        <rect key="frame" x="8" y="8" width="358" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -245,6 +245,7 @@
                         <viewLayoutGuide key="safeArea" id="unt-ip-3ev"/>
                     </view>
                     <connections>
+                        <outlet property="breedDescription" destination="wzB-V0-xzm" id="GCr-0X-Iwk"/>
                         <outlet property="breedImage" destination="Kzf-1p-r2K" id="esN-Rv-rwk"/>
                         <outlet property="breedName" destination="AvA-lw-ge9" id="BSZ-Xr-Eb3"/>
                     </connections>
