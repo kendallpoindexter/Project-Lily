@@ -8,9 +8,32 @@
 
 import Foundation
 
-class Dog: Decodable {
+class Dog: Codable {
     let id: String
     let name: String
     let size: String
     let imageURL: String
+    
+//    init(id: String, name: String, size: String, imageURL: String) {
+//        self.id = id
+//        self.name = name
+//        self.size = size
+//        self.imageURL = imageURL
+//    }
+//    
+//    required convenience init(coder aDecoder: NSCoder) {
+//        let id = aDecoder.decodeObject(forKey: "id") as! String
+//        let name = aDecoder.decodeObject(forKey: "name") as! String
+//        let size = aDecoder.decodeObject(forKey: "size") as! String
+//        let imageURL = aDecoder.decodeObject(forKey: "imageURL") as! String
+//        
+//        self.init(id: id, name: name, size: size, imageURL: imageURL)
+//    }
+//    
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(id, forKey: "id")
+//        aCoder.encode(name, forKey: "name")
+//        aCoder.encode(size, forKey: "size")
+//        aCoder.encode(imageURL, forKey: "imageURL")
+//    }
 }

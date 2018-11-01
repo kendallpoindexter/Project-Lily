@@ -8,11 +8,13 @@
 
 import Foundation
 
-class FavoriteDogs {
+class FavoriteDogs: Codable {
     
     //Try UserDefault within class in order to load favorite dogs from p.list
+    
     var favorites: [Dog] = []
     
-    static var shared = FavoriteDogs().favorites
+    
+    static var shared = FavoriteDogs()
     
 }
