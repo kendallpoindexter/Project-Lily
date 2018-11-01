@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Dog: Decodable {
+struct Dog: Codable {
   
     let id: String
     let name: String
