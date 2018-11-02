@@ -33,7 +33,7 @@
         <scene sceneID="YUt-hU-WZf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h60-2Q-F2V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="DNd-Rh-wGl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="DNd-Rh-wGl"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q52-es-KMT">
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56n-tF-Lkk">
-                                <rect key="frame" x="67" y="201" width="240" height="240"/>
+                                <rect key="frame" x="87" y="206" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -178,7 +178,7 @@
         <scene sceneID="zOQ-Kl-qab">
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-Bw4-M6-nDv" automaticallyAdjustsScrollViewInsets="NO" id="7Vl-ed-JED" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Breeds" id="Nka-Sc-BEe"/>
+                    <tabBarItem key="tabBarItem" title="Breeds" image="animal-footprint" id="Nka-Sc-BEe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oF7-wc-agM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -333,7 +333,7 @@
         <scene sceneID="7Ru-nO-QAn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUL-ky-NjU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="6J5-SK-Jvs"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="love" id="6J5-SK-Jvs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KpO-we-D6j">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -349,6 +349,11 @@
             <point key="canvasLocation" x="2041" y="1762"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="animal-footprint" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="love" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PQf-pR-izT"/>
     </inferredMetricsTieBreakers>
