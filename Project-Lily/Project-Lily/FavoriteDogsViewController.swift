@@ -28,7 +28,7 @@ class FavoriteDogsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Persistence.loadFavorites()        
+        Persistence.loadFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
