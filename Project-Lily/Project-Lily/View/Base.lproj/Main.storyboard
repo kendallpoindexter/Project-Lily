@@ -303,7 +303,7 @@
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aos-IW-tbe">
-                                <rect key="frame" x="335" y="382" width="59" height="30"/>
+                                <rect key="frame" x="20" y="136" width="374" height="276"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Favorite "/>
                                 <connections>
