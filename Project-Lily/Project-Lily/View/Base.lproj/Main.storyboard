@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-4X-5Cx">
-                                <rect key="frame" x="20" y="503" width="374" height="246"/>
+                                <rect key="frame" x="20" y="499" width="374" height="246"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -310,7 +310,7 @@
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aos-IW-tbe">
-                                <rect key="frame" x="350" y="382" width="30" height="30"/>
+                                <rect key="frame" x="364" y="382" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="love"/>
                                 <connections>
@@ -366,6 +366,6 @@
         <image name="love" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PQf-pR-izT"/>
+        <segue reference="cBL-ih-Hv8"/>
     </inferredMetricsTieBreakers>
 </document>
