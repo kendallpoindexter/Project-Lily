@@ -21,13 +21,13 @@ class NetworkManager {
             } else if let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200 {
                 if let data = data {
-//                    let dogs: [Dog] = [] //self.parse(data: data)!
-//                    completion(dogs)
-//
-//                    self.dogsArray = dogs
-//                    DispatchQueue.main.async {
-//                        self.dogListTableView.reloadData()
-//                    }
+                 let dogs: [Dog] = self.parse(data: data)
+                    completion(dogs)
+                    
+                    self.dogsArray = dogs
+                    DispatchQueue.main.async {
+                        self.dogListTableView.reloadData()
+                    }
                 }
                 return
             } else {
@@ -58,16 +58,16 @@ class NetworkManager {
 }
 
 
-//class ViewModel {
-//    var dogs = [Dog]()
-//
-//    func getDogs() {
-//        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
-//                self.dogs = newDogs
-//                // delegate?.didFetchDogs()
-//        }
-//
-//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
-//    }
-//}
-//
+class ViewModel {
+    var dogs = [Dog]()
+
+    func getDogs() {
+        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
+                self.dogs = newDogs
+                // delegate?.didFetchDogs()
+        }
+
+        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
+    }
+}
+
