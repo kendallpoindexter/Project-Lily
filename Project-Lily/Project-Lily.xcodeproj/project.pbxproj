@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		691EEDFE871D8EBCA48F7CF8 /* Pods_Project_Lily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */; };
 		EB87F2A6217E19790050680E /* FavoriteDogClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87F2A5217E19790050680E /* FavoriteDogClass.swift */; };
+		EB93CC8C219F44C1000745F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB93CC8B219F44C1000745F9 /* NetworkManager.swift */; };
 		EBB4072D217E626500D9080C /* ImageMethodsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4072C217E626500D9080C /* ImageMethodsClass.swift */; };
 		EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B24216BA1480068CF92 /* AppDelegate.swift */; };
 		EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B26216BA1480068CF92 /* HomeViewController.swift */; };
@@ -30,6 +31,7 @@
 		44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Lily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810E8EE2D1822DED7898F62C /* Pods-Project-Lily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Lily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily.debug.xcconfig"; sourceTree = "<group>"; };
 		EB87F2A5217E19790050680E /* FavoriteDogClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDogClass.swift; sourceTree = "<group>"; };
+		EB93CC8B219F44C1000745F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EBB4072C217E626500D9080C /* ImageMethodsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMethodsClass.swift; sourceTree = "<group>"; };
 		EBBA2B21216BA1480068CF92 /* Project-Lily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Lily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA2B24216BA1480068CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB93CC8D219F44D1000745F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EB93CC8B219F44C1000745F9 /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		EBBA2B18216BA1480068CF92 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		EBBA2B23216BA1480068CF92 /* Project-Lily */ = {
 			isa = PBXGroup;
 			children = (
+				EB93CC8D219F44D1000745F9 /* Networking */,
 				EBBA2B24216BA1480068CF92 /* AppDelegate.swift */,
 				EBBA2B2B216BA14A0068CF92 /* Assets.xcassets */,
 				EBBA2B30216BA14A0068CF92 /* Info.plist */,
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB93CC8C219F44C1000745F9 /* NetworkManager.swift in Sources */,
 				EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */,
 				EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */,
 				EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */,
