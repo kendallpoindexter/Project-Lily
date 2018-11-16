@@ -21,10 +21,7 @@ class NetworkManager {
             } else if let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200 {
                 if let data = data {
-                 let dogs: [Dog] = self.parse(data: data)
-                    completion(dogs)
-                    
-                    self.dogsArray = dogs
+                 ogs
                     DispatchQueue.main.async {
                         self.dogListTableView.reloadData()
                     }
