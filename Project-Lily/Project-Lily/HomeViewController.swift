@@ -26,6 +26,10 @@ class HomeViewController: UIViewController {
         appDescription.text = opener
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    // mark methods as private if method is specific to certain class ie private 
+    
+    
     //MARK: - Methods
     
     func displayImage() {

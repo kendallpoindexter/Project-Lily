@@ -11,7 +11,7 @@ import UIKit
 class DogDetailViewController: UIViewController {
     
     //MARK: - Properties
-    var dog: Dog?
+    private var dog: Dog?
 //    var favoriteDogs = FavoriteDogs.shared
     //var dogImageHelper = DogImageHelper()
     
@@ -35,6 +35,11 @@ class DogDetailViewController: UIViewController {
     
     //MARK: - Methods
     
+    func setDog(_ dog: Dog) {
+        self.dog = dog
+    }
+    
+    // Is this function doing too much
     func loadImage() {
         guard let imageData =  DogImageHelper.getDogImageURL(from: dog) else { return }
         breedImage.layer.borderColor = UIColor.black.cgColor
