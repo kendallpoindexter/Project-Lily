@@ -10,8 +10,19 @@ import Foundation
 
 class NetworkManager {
     
-    func dogURL() -> URL? {
-        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
+    private let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func createDogURL(urlString: String) -> URL? {
         guard let url = URL(string: urlString) else {return nil}
         return url
     }
