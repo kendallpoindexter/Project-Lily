@@ -134,29 +134,7 @@ extension DogListViewController {
     
     
     
-    func createDogURLSession() {
-        let session = URLSession.shared
-        guard let url = dogURL() else { return }
-        let dataTask = session.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print("Failure! \(error)")
-            } else if let httpResponse = response as? HTTPURLResponse,
-                httpResponse.statusCode == 200 {
-                if let data = data {
-                    self.dogDatabase.dogsArray = self.parse(data: data)!
-                    DispatchQueue.main.async {
-                        self.dogListTableView.reloadData()
-                    }
-                }
-                return
-            } else {
-                print("Failure! \(response!)")
-            }
-
-        }
-        
-        dataTask.resume()
-    }
+    
     
 //    func performDogRequest(with url: URL) -> Data? {
 //        do {
@@ -167,16 +145,7 @@ extension DogListViewController {
 //        }
 //    }
     
-    func parse(data: Data) -> [Dog]? {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode([Dog].self, from: data)
-            return result
-        } catch {
-            print("JSON Error \(error)")
-            return nil
-        }
-    }
+    
     
 }
 
