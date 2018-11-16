@@ -132,11 +132,7 @@ extension DogListViewController: UITableViewDelegate {
 
 extension DogListViewController {
     
-    func dogURL() -> URL? {
-        let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
-        guard let url = URL(string: urlString) else {return nil}
-        return url
-    }
+    
     
     func createDogURLSession() {
         let session = URLSession.shared
