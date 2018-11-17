@@ -21,9 +21,10 @@ class NetworkManager {
             } else if let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200 {
                 if let data = data {
-                 ogs
+                    let dogs: [Dog] = self.parse(data: data) ?? []
+                    completion(dogs)
                     DispatchQueue.main.async {
-                        self.dogListTableView.reloadData()
+                        //self.dogListTableView.reloadData()
                     }
                 }
                 return
@@ -36,12 +37,12 @@ class NetworkManager {
         dataTask.resume()
     }
     
-    func createDogURL(urlString: String) -> URL? {
+   private func createDogURL(urlString: String) -> URL? {
         guard let url = URL(string: urlString) else {return nil}
         return url
     }
     
-    func parse(data: Data) -> [Dog]? {
+    private func parse(data: Data) -> [Dog]? {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode([Dog].self, from: data)
@@ -55,16 +56,16 @@ class NetworkManager {
 }
 
 
-class ViewModel {
-    var dogs = [Dog]()
-
-    func getDogs() {
-        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
-                self.dogs = newDogs
-                // delegate?.didFetchDogs()
-        }
-
-        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
-    }
-}
+//class ViewModel {
+//    var dogs = [Dog]()
+//
+//    func getDogs() {
+//        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
+//                self.dogs = newDogs
+//                // delegate?.didFetchDogs()
+//        }
+//
+//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
+//    }
+//}
 
