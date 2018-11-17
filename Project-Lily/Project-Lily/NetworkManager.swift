@@ -12,7 +12,7 @@ class NetworkManager {
     
     private let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
     
-    func createDogURLSession(completion: @escaping (_ dogsResult: [Dog]) -> Void) {
+    func createDogURLSession(completion: @escaping ([Dog]) -> Void) {
         let session = URLSession.shared
         guard let url = createDogURL(urlString: urlString) else { return }
         let dataTask = session.dataTask(with: url) { (data, response, error) in
@@ -22,8 +22,10 @@ class NetworkManager {
                 httpResponse.statusCode == 200 {
                 if let data = data {
                     let dogs: [Dog] = self.parse(data: data) ?? []
-                    completion(dogs)
+                   
+                    
                     DispatchQueue.main.async {
+                         completion(dogs)
                         //self.dogListTableView.reloadData()
                     }
                 }
@@ -56,16 +58,4 @@ class NetworkManager {
 }
 
 
-//class ViewModel {
-//    var dogs = [Dog]()
-//
-//    func getDogs() {
-//        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
-//                self.dogs = newDogs
-//                // delegate?.didFetchDogs()
-//        }
-//
-//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
-//    }
-//}
 

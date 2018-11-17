@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+//class ViewModel {
+//    var dogs = [Dog]()
+//
+//    func getDogs() {
+//        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
+//                self.dogs = newDogs
+//                // delegate?.didFetchDogs()
+//        }
+//
+//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
+//    }
+//}
