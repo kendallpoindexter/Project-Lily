@@ -22,12 +22,9 @@ class NetworkManager {
                 httpResponse.statusCode == 200 {
                 if let data = data {
                     let dogs: [Dog] = self.parse(data: data) ?? []
-                   
+                    completion(dogs)
                     
-                    DispatchQueue.main.async {
-                         completion(dogs)
-                        //self.dogListTableView.reloadData()
-                    }
+                   
                 }
                 return
             } else {
