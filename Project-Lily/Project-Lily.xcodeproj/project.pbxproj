@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		691EEDFE871D8EBCA48F7CF8 /* Pods_Project_Lily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */; };
+		EB0D55C221A0A22300AA9001 /* DogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0D55C121A0A22300AA9001 /* DogListViewModel.swift */; };
 		EB87F2A6217E19790050680E /* FavoriteDogClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87F2A5217E19790050680E /* FavoriteDogClass.swift */; };
+		EB93CC8C219F44C1000745F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB93CC8B219F44C1000745F9 /* NetworkManager.swift */; };
 		EBB4072D217E626500D9080C /* ImageMethodsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4072C217E626500D9080C /* ImageMethodsClass.swift */; };
 		EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B24216BA1480068CF92 /* AppDelegate.swift */; };
 		EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA2B26216BA1480068CF92 /* HomeViewController.swift */; };
@@ -29,7 +31,9 @@
 		25EA8CD6D41E2C583EAE467D /* Pods-Project-Lily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Lily.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily.release.xcconfig"; sourceTree = "<group>"; };
 		44C2DFA33098279EF83D17A3 /* Pods_Project_Lily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Lily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810E8EE2D1822DED7898F62C /* Pods-Project-Lily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Lily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Lily/Pods-Project-Lily.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0D55C121A0A22300AA9001 /* DogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewModel.swift; sourceTree = "<group>"; };
 		EB87F2A5217E19790050680E /* FavoriteDogClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDogClass.swift; sourceTree = "<group>"; };
+		EB93CC8B219F44C1000745F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EBB4072C217E626500D9080C /* ImageMethodsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMethodsClass.swift; sourceTree = "<group>"; };
 		EBBA2B21216BA1480068CF92 /* Project-Lily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Lily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA2B24216BA1480068CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB0D55C321A0A24000AA9001 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB0D55C121A0A22300AA9001 /* DogListViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB93CC8D219F44D1000745F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EB93CC8B219F44C1000745F9 /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		EBBA2B18216BA1480068CF92 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +122,8 @@
 				EBBA2B2B216BA14A0068CF92 /* Assets.xcassets */,
 				EBBA2B30216BA14A0068CF92 /* Info.plist */,
 				EBBA2B52216FCD210068CF92 /* GoogleService-Info.plist */,
+				EB93CC8D219F44D1000745F9 /* Networking */,
+				EB0D55C321A0A24000AA9001 /* ViewModel */,
 				EBBA2B3C216BE0C10068CF92 /* Model */,
 				EBBA2B3D216BE0DE0068CF92 /* View */,
 				EBBA2B3E216BE1120068CF92 /* Controller */,
@@ -265,12 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB93CC8C219F44C1000745F9 /* NetworkManager.swift in Sources */,
 				EBBA2B46216BF0090068CF92 /* DogDetailViewController.swift in Sources */,
 				EBBA2B27216BA1480068CF92 /* HomeViewController.swift in Sources */,
 				EBBA2B48216D1FDF0068CF92 /* DogClass.swift in Sources */,
 				EBBA2B25216BA1480068CF92 /* AppDelegate.swift in Sources */,
 				EBD40761217E4E61001C92DC /* FavoriteDogCell.swift in Sources */,
 				EBD4075F217E4D6A001C92DC /* FavoriteDogsViewController.swift in Sources */,
+				EB0D55C221A0A22300AA9001 /* DogListViewModel.swift in Sources */,
 				EB87F2A6217E19790050680E /* FavoriteDogClass.swift in Sources */,
 				EBBA2B3B216BD4FB0068CF92 /* DogListViewController.swift in Sources */,
 				EBFA16D2218A2B84002611C8 /* Persistence.swift in Sources */,
