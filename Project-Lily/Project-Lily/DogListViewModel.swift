@@ -8,14 +8,19 @@
 
 import Foundation
 
+protocol DogListViewModelDelegate: class {
+    func didFetchDogs()
+}
+
 class DogListViewModel {
     var dogs = [Dog]()
+   weak var delegate: DogListViewModelDelegate?
 
     func getDogs() {
         let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
                 self.dogs = newDogs
                 print(self.dogs)
-                // delegate?.didFetchDogs()
+                self.delegate?.didFetchDogs()
         }
         NetworkManager().fetchDogs(completion: gotDogsCompletion)
     }

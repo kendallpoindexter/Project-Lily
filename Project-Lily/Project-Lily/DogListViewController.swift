@@ -28,6 +28,7 @@ class DogListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dogListVM.delegate = self
         configureDogList()
         dogListVM.getDogs()
         configureSearchBar()
@@ -167,6 +168,12 @@ extension DogListViewController: UISearchBarDelegate {
         }
     }
     
+}
+
+extension DogListViewController: DogListViewModelDelegate {
+    func didFetchDogs() {
+        <#code#>
+    }
 }
 
 
