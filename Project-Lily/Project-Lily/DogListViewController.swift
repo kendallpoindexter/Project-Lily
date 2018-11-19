@@ -12,7 +12,7 @@ class DogListViewController: UIViewController {
     
     //MARK: - Properties
     
-    var dogDatabase = DogDatabase()
+    //var dogDatabase = DogDatabase()
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
@@ -66,7 +66,7 @@ class DogListViewController: UIViewController {
         case "DetailSegue":
             guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
-            DogDetailViewController.dog = dogDatabase.dogsArray[selectedIndex]
+            DogDetailViewController.dog = dogListVM.dogs[selectedIndex]
             
             if isSearching == true {
                 DogDetailViewController.dog = filteredDogArray[selectedIndex]
@@ -97,7 +97,7 @@ extension DogListViewController:  UITableViewDataSource {
         if isSearching == true {
             return filteredDogArray.count
         }
-        return dogDatabase.dogsArray.count
+        return dogListVM.dogs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,7 +109,7 @@ extension DogListViewController:  UITableViewDataSource {
             dogs = filteredDogArray[indexPath.row]
         } else {
             
-            dogs = dogDatabase.dogsArray[indexPath.row]
+            dogs = dogListVM.dogs[indexPath.row]
         }
         
         cell.textLabel?.text = dogs.name
@@ -163,7 +163,7 @@ extension DogListViewController: UISearchBarDelegate {
         } else {
             isSearching = true
             guard let text = searchBar.text else {return}
-            filteredDogArray = dogDatabase.dogsArray.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
+            filteredDogArray = dogListVM.dogs.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
             dogListTableView.reloadData()
         }
     }
@@ -172,7 +172,9 @@ extension DogListViewController: UISearchBarDelegate {
 
 extension DogListViewController: DogListViewModelDelegate {
     func didFetchDogs() {
-        <#code#>
+        DispatchQueue.main.async {
+            self.dogListTableView.reloadData()
+        }
     }
 }
 
