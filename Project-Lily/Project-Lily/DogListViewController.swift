@@ -16,7 +16,8 @@ class DogListViewController: UIViewController {
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
-   
+    var dogListVM = DogListViewModel()
+    
     //MARK: - Outlets
     
     @IBOutlet weak var dogListTableView: UITableView!
@@ -28,8 +29,7 @@ class DogListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDogList()
-        createDogURLSession()
-        //getDogData()
+        dogListVM.getDogs()
         configureSearchBar()
 
         // Do any additional setup after loading the view.

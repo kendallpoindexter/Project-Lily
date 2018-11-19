@@ -14,9 +14,9 @@ class DogListViewModel {
     func getDogs() {
         let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
                 self.dogs = newDogs
+                print(self.dogs)
                 // delegate?.didFetchDogs()
         }
         NetworkManager().fetchDogs(completion: gotDogsCompletion)
-//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
     }
 }
