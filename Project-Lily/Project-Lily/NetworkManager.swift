@@ -14,7 +14,7 @@ class NetworkManager {
     
     func fetchDogs(completion: @escaping ([Dog]) -> Void) {
         let session = URLSession.shared
-        guard let url = createDogURL(urlString: urlString) else { return }
+        guard let url = URL(string: urlString) else { return }
         let dataTask = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Failure! \(error)")
@@ -34,11 +34,6 @@ class NetworkManager {
         }
         
         dataTask.resume()
-    }
-    
-   private func createDogURL(urlString: String) -> URL? {
-        guard let url = URL(string: urlString) else {return nil}
-        return url
     }
     
     private func parse(data: Data) -> [Dog]? {
