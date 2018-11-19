@@ -23,16 +23,12 @@ class NetworkManager {
                 if let data = data {
                     let dogs: [Dog] = self.parse(data: data) ?? []
                     completion(dogs)
-                    
-                   
                 }
                 return
             } else {
                 print("Failure! \(response!)")
             }
-            
         }
-        
         dataTask.resume()
     }
     
@@ -46,7 +42,6 @@ class NetworkManager {
             return nil
         }
     }
-    
 }
 
 
