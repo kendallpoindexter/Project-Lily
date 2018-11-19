@@ -16,7 +16,7 @@ class DogListViewModel {
                 self.dogs = newDogs
                 // delegate?.didFetchDogs()
         }
-
+        NetworkManager().fetchDogs(completion: gotDogsCompletion)
 //        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
     }
 }
