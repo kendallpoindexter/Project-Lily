@@ -12,7 +12,7 @@ class NetworkManager {
     
     private let urlString = "https://private-52aac-breeds1.apiary-mock.com/breeds"
     
-    func createDogURLSession(completion: @escaping ([Dog]) -> Void) {
+    func fetchDogs(completion: @escaping ([Dog]) -> Void) {
         let session = URLSession.shared
         guard let url = createDogURL(urlString: urlString) else { return }
         let dataTask = session.dataTask(with: url) { (data, response, error) in
