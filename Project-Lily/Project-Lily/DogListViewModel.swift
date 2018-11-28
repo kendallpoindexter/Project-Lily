@@ -17,12 +17,12 @@ class DogListViewModel {
    weak var delegate: DogListViewModelDelegate?
 
     func getDogs() {
-        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
-                self.dogs = newDogs
-                print(self.dogs)
-                self.delegate?.didFetchDogs()
+        
+        NetworkManager().fetchDogs { (newDogs) in
+            self.dogs = newDogs
+            print(self.dogs)
+            self.delegate?.didFetchDogs()
         }
-        NetworkManager().fetchDogs(completion: gotDogsCompletion)
     }
 }
 
