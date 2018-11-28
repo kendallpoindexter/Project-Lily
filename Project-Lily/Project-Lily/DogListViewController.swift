@@ -16,7 +16,7 @@ class DogListViewController: UIViewController {
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
-    var dogListVM = DogListViewModel()
+    var dogListViewModel = DogListViewModel()
     
     //MARK: - Outlets
     
@@ -28,9 +28,9 @@ class DogListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dogListVM.delegate = self
+        dogListViewModel.delegate = self
         configureDogList()
-        dogListVM.getDogs()
+        dogListViewModel.getDogs()
         configureSearchBar()
     }
     
@@ -52,7 +52,7 @@ class DogListViewController: UIViewController {
         case "DetailSegue":
             guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
-            DogDetailViewController.dog = dogListVM.dogs[selectedIndex]
+            DogDetailViewController.dog = dogListViewModel.dogs[selectedIndex]
             
             if isSearching == true {
                 DogDetailViewController.dog = filteredDogArray[selectedIndex]
@@ -72,7 +72,7 @@ extension DogListViewController:  UITableViewDataSource {
         if isSearching == true {
             return filteredDogArray.count
         }
-        return dogListVM.dogs.count
+        return dogListViewModel.dogs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,7 +84,7 @@ extension DogListViewController:  UITableViewDataSource {
             dogs = filteredDogArray[indexPath.row]
         } else {
             
-            dogs = dogListVM.dogs[indexPath.row]
+            dogs = dogListViewModel.dogs[indexPath.row]
         }
         
         cell.textLabel?.text = dogs.name
@@ -117,7 +117,7 @@ extension DogListViewController: UISearchBarDelegate {
         } else {
             isSearching = true
             guard let text = searchBar.text else {return}
-            filteredDogArray = dogListVM.dogs.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
+            filteredDogArray = dogListViewModel.dogs.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
             dogListTableView.reloadData()
         }
     }
