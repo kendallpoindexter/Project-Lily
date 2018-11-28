@@ -12,7 +12,7 @@ class DogListViewController: UIViewController {
     
     //MARK: - Properties
     
-    //var dogDatabase = DogDatabase()
+    
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
@@ -32,8 +32,6 @@ class DogListViewController: UIViewController {
         configureDogList()
         dogListVM.getDogs()
         configureSearchBar()
-
-        // Do any additional setup after loading the view.
     }
     
     func configureDogList() {
@@ -49,18 +47,6 @@ class DogListViewController: UIViewController {
     
     //MARK: - Methods
     
-//    func getDogData() {
-//        guard let url = self.dogURL() else { return }
-//        guard let jsonString = performDogRequest(with: url) else { return }
-////        self.dogDatabase.dogsArray = parse(data: jsonString)
-//        if let dogs = parse(data: jsonString) {
-//            dogDatabase.dogsArray = dogs
-//        } else {
-//            dogDatabase.dogsArray = []
-//        }
-//
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "DetailSegue":
@@ -75,17 +61,6 @@ class DogListViewController: UIViewController {
             return 
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 //MARK: - UITableViewController Data Source Methods
@@ -127,27 +102,6 @@ extension DogListViewController: UITableViewDelegate {
         selectedIndex = indexPath.row
         return indexPath
     }
-}
-
-//MARK: - Networking Methods
-
-extension DogListViewController {
-    
-    
-    
-    
-    
-//    func performDogRequest(with url: URL) -> Data? {
-//        do {
-//            return try Data(contentsOf: url)
-//        } catch {
-//            print("Download Error: \(error.localizedDescription)")
-//            return nil
-//        }
-//    }
-    
-    
-    
 }
 
 //MARK: - UISearchBar Delegate Implementation 
