@@ -48,7 +48,7 @@ class DogListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "DetailSegue":
+        case StoryboardIdentifiers.detailSegue.rawValue :
             guard let dogDetailVC = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
             dogDetailVC.dog = dogListViewModel.dogs[selectedIndex]
