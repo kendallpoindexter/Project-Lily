@@ -70,7 +70,7 @@ extension DogListViewController:  UITableViewDataSource {
         if isSearching == true {
             return filteredDogArray.count
         }
-        return dogListViewModel.dogs.count
+        return dogListViewModel.numberOfCells()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

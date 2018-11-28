@@ -25,3 +25,10 @@ class DogListViewModel {
         NetworkManager().fetchDogs(completion: gotDogsCompletion)
     }
 }
+
+extension DogListViewModel {
+    func numberOfCells() -> Int {
+        let cells = dogs.count
+        return cells
+    }
+}
