@@ -49,12 +49,12 @@ class DogListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "DetailSegue":
-            guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
+            guard let dogDetailVC = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
-            DogDetailViewController.dog = dogListViewModel.dogs[selectedIndex]
+            dogDetailVC.dog = dogListViewModel.dogs[selectedIndex]
             
             if isSearching == true {
-                DogDetailViewController.dog = filteredDogArray[selectedIndex]
+                dogDetailVC.dog = filteredDogArray[selectedIndex]
             }
         default:
             return 
