@@ -12,7 +12,6 @@ class DogListViewController: UIViewController {
     
     //MARK: - Properties
     
-    
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
@@ -25,7 +24,7 @@ class DogListViewController: UIViewController {
     
     
     //MARK: - Lifecyle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dogListViewModel.delegate = self
@@ -68,7 +67,6 @@ class DogListViewController: UIViewController {
 extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if isSearching == true {
             return filteredDogArray.count
         }
@@ -78,7 +76,6 @@ extension DogListViewController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath)
         let dogs: Dog
-       
         
         if isSearching == true {
             dogs = filteredDogArray[indexPath.row]
@@ -90,7 +87,6 @@ extension DogListViewController:  UITableViewDataSource {
         cell.textLabel?.text = dogs.name
         return cell
     }
-    
 }
 
 //MARK: - UITableViewController Delegate Methods
@@ -98,7 +94,6 @@ extension DogListViewController:  UITableViewDataSource {
 extension DogListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
         selectedIndex = indexPath.row
         return indexPath
     }
@@ -110,7 +105,6 @@ extension DogListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
-            
             isSearching = false
             view.endEditing(true)
             dogListTableView.reloadData()
@@ -121,7 +115,6 @@ extension DogListViewController: UISearchBarDelegate {
             dogListTableView.reloadData()
         }
     }
-    
 }
 
 extension DogListViewController: DogListViewModelDelegate {
