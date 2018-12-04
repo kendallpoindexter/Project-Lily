@@ -12,11 +12,11 @@ class DogListViewController: UIViewController {
     
     //MARK: - Properties
     
-    var dogDatabase = DogDatabase()
     var filteredDogArray = [Dog]()
     var selectedIndex: Int?
     var isSearching = false
-   
+    var dogListViewModel = DogListViewModel()
+    
     //MARK: - Outlets
     
     @IBOutlet weak var dogListTableView: UITableView!
@@ -24,15 +24,13 @@ class DogListViewController: UIViewController {
     
     
     //MARK: - Lifecyle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dogListViewModel.delegate = self
         configureDogList()
-        createDogURLSession()
-        //getDogData()
+        dogListViewModel.getDogs()
         configureSearchBar()
-
-        // Do any additional setup after loading the view.
     }
     
     func configureDogList() {
@@ -48,43 +46,20 @@ class DogListViewController: UIViewController {
     
     //MARK: - Methods
     
-//    func getDogData() {
-//        guard let url = self.dogURL() else { return }
-//        guard let jsonString = performDogRequest(with: url) else { return }
-////        self.dogDatabase.dogsArray = parse(data: jsonString)
-//        if let dogs = parse(data: jsonString) {
-//            dogDatabase.dogsArray = dogs
-//        } else {
-//            dogDatabase.dogsArray = []
-//        }
-//
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "DetailSegue":
-            guard let DogDetailViewController = segue.destination as? DogDetailViewController else { return }
+        case StoryboardIdentifiers.detailSegue.rawValue :
+            guard let dogDetailVC = segue.destination as? DogDetailViewController else { return }
             guard let selectedIndex = selectedIndex else { return }
-            DogDetailViewController.dog = dogDatabase.dogsArray[selectedIndex]
+            dogDetailVC.dog = dogListViewModel.dogs[selectedIndex]
             
             if isSearching == true {
-                DogDetailViewController.dog = filteredDogArray[selectedIndex]
+                dogDetailVC.dog = filteredDogArray[selectedIndex]
             }
         default:
             return 
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 //MARK: - UITableViewController Data Source Methods
@@ -92,29 +67,26 @@ class DogListViewController: UIViewController {
 extension DogListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if isSearching == true {
             return filteredDogArray.count
         }
-        return dogDatabase.dogsArray.count
+        return dogListViewModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath)
         let dogs: Dog
-       
         
         if isSearching == true {
             dogs = filteredDogArray[indexPath.row]
         } else {
             
-            dogs = dogDatabase.dogsArray[indexPath.row]
+            dogs = dogListViewModel.dogs[indexPath.row]
         }
         
         cell.textLabel?.text = dogs.name
         return cell
     }
-    
 }
 
 //MARK: - UITableViewController Delegate Methods
@@ -122,31 +94,9 @@ extension DogListViewController:  UITableViewDataSource {
 extension DogListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
         selectedIndex = indexPath.row
         return indexPath
     }
-}
-
-//MARK: - Networking Methods
-
-extension DogListViewController {
-    
-    
-    
-    
-    
-//    func performDogRequest(with url: URL) -> Data? {
-//        do {
-//            return try Data(contentsOf: url)
-//        } catch {
-//            print("Download Error: \(error.localizedDescription)")
-//            return nil
-//        }
-//    }
-    
-    
-    
 }
 
 //MARK: - UISearchBar Delegate Implementation 
@@ -155,18 +105,24 @@ extension DogListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
-            
             isSearching = false
             view.endEditing(true)
             dogListTableView.reloadData()
         } else {
             isSearching = true
             guard let text = searchBar.text else {return}
-            filteredDogArray = dogDatabase.dogsArray.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
+            filteredDogArray = dogListViewModel.dogs.filter() {$0.name.contains(text) || $0.id.contains(text) || $0.size.contains(text)}
             dogListTableView.reloadData()
         }
     }
-    
+}
+
+extension DogListViewController: DogListViewModelDelegate {
+    func didFetchDogs() {
+        DispatchQueue.main.async {
+            self.dogListTableView.reloadData()
+        }
+    }
 }
 
 

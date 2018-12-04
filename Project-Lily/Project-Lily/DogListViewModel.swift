@@ -8,15 +8,24 @@
 
 import Foundation
 
-//class ViewModel {
-//    var dogs = [Dog]()
-//
-//    func getDogs() {
-//        let gotDogsCompletion: ([Dog]) -> Void = { newDogs in
-//                self.dogs = newDogs
-//                // delegate?.didFetchDogs()
-//        }
-//
-//        NetworkManager().createDogURLSession(completion: gotDogsCompletion)
-//    }
-//}
+protocol DogListViewModelDelegate: class {
+    func didFetchDogs()
+}
+
+class DogListViewModel {
+    var dogs = [Dog]()
+    var numberOfCells: Int {
+        return dogs.count
+    }
+   weak var delegate: DogListViewModelDelegate?
+
+    func getDogs() {
+        
+        NetworkManager().fetchDogs { newDogs in
+            self.dogs = newDogs
+            print(self.dogs)
+            self.delegate?.didFetchDogs()
+        }
+    }
+}
+
