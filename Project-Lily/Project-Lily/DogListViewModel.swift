@@ -21,7 +21,7 @@ class DogListViewModel {
 
     func getDogs() {
         
-        NetworkManager().fetchDogs { (newDogs) in
+        NetworkManager().fetchDogs { newDogs in
             self.dogs = newDogs
             print(self.dogs)
             self.delegate?.didFetchDogs()
