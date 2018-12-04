@@ -14,6 +14,9 @@ protocol DogListViewModelDelegate: class {
 
 class DogListViewModel {
     var dogs = [Dog]()
+    var numberOfCells: Int {
+        return dogs.count
+    }
    weak var delegate: DogListViewModelDelegate?
 
     func getDogs() {
@@ -26,9 +29,3 @@ class DogListViewModel {
     }
 }
 
-extension DogListViewModel {
-    func numberOfCells() -> Int {
-        let cells = dogs.count
-        return cells
-    }
-}
